@@ -2,16 +2,16 @@
 class Node {
   constructor(value){
     this.value = value;
-    this.next = next;
+    this.next = null;
   }
 }
-class List {
+class LinkedList {
   constructor(){
-      this.head = null;
+    this.head = null;
   }
   append(value){
     // Big O: O(n)
-    if (!this.head) this.head = new Node(val);
+    if (!this.head) this.head = new Node(value);
     else{
       let current = this.head;
       while (current.next){
@@ -21,3 +21,5 @@ class List {
     }
   }
 }
+
+module.exports = LinkedList;
