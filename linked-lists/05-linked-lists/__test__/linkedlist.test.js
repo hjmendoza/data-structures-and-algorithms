@@ -59,6 +59,7 @@ describe('Singly Linked List', () => {
     expect(list.head.value).toBe(60);
   });
 
+  // REVERSE
   it('reverse should return head if only one node exists', () => {
     let list = new LinkedList;
     list.append(2);
@@ -66,4 +67,28 @@ describe('Singly Linked List', () => {
 
     expect(list.head.value).toBe(2);
   });
+
+  it('should reverse a list with only 2 nodes', () => {
+    let list = new LinkedList;
+    list.append(2);
+    list.append(4);
+    list.reverse();
+
+    expect(list.head.value).toBe(4);
+    expect(list.head.next.value).toBe(2);
+  });
+
+  it('should reverse a list with several nodes', () => {
+    let list = new LinkedList;
+    list.append(2);
+    list.append(4);
+    list.append(6);
+    list.reverse();
+
+    expect(list.head.value).toBe(6);
+    expect(list.head.next.value).toBe(4);
+    expect(list.head.next.next.value).toBe(2);
+  });
+
+  
 });
