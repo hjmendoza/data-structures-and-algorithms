@@ -48,15 +48,18 @@ class LinkedList {
     }
   }
 
-  remove(offset){
-    if (!this.head.next) return this.head;
-    else {
-    let current = this.head
-    
+  remove(){
+    if (!this.head) return 'null';
+    else{
+      let current = this.head;
+      let save = null;
+      while(current.next !== null){
+        save = current.next;
+        current = current.next;
+      }
+      save = null;
     }
   }
-
-  
 
   serialize(){
     // Big O: O(n)
@@ -82,6 +85,7 @@ class LinkedList {
       this.head = newNode;
     }
   }
+}
 
 
 

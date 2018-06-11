@@ -90,6 +90,32 @@ describe('Singly Linked List', () => {
     expect(list.head.next.next.value).toBe(2);
   });
 
+  it('remove should null if head does not exist', () => {
+    let list = new LinkedList;
+    list.remove();
+
+    expect(list).toBeNull;
+  });
+
+
+  it('remove should return head if only one node exists', () => {
+    let list = new LinkedList;
+    list.append(2);
+    list.remove();
+
+    expect(list.head.value).toBe(2);
+  });
+
+  it('remvoe should remove the last item in the list', () => {
+    let list = new LinkedList;
+    list.append(2);
+    list.append(4);
+    list.append(6);
+    list.reverse();
+
+    expect(list.head.next.value).toBe(4);
+  });
+
   it('serialize should return /"null/" for an empty list', () => {
     let list = new LinkedList;
     list.serialize();
@@ -112,7 +138,7 @@ describe('Singly Linked List', () => {
     expect(list.serialize()).toBe('468');
   });
 
-  it('deserialize should return a new linked list if passed an empty string', () => {
+  xit('deserialize should return a new linked list if passed an empty string', () => {
     let list = new LinkedList;
     list.append(4);
     list.append(6);
