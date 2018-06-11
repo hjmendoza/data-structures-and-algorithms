@@ -48,20 +48,44 @@ class LinkedList {
     }
   }
 
-  serialize() {
+  remove(offset){
+    if (!this.head.next) return this.head;
+    else {
+    let current = this.head
+    
+    }
+  }
+
+  
+
+  serialize(){
     // Big O: O(n)
     let stringList = '';
     let current = this.head;
     if (!this.head) return 'null';
     else {
-      while (current.next) {
-        stringList += `${current.value} next is `;
+      while (current) {
+        stringList += `${current.value}`;
         current = current.next;
       }
-      stringList += `${current.value} next is null`;
       return stringList;
     }
   }
-}
+
+
+  deserialize(stringList){
+    // Big O: O(n)
+    var i = 0;
+    let list = new LinkedList;
+    while (i < stringList.length){
+      var newNode = new Node(stringList[0]);
+      this.head = newNode;
+    }
+  }
+
+
 
 module.exports = LinkedList;
+
+
+

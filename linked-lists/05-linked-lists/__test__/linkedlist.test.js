@@ -100,7 +100,7 @@ describe('Singly Linked List', () => {
     list.append(4);
     list.append(6);
 
-    expect(list.serialize()).toBe('4 next is 6 next is null');
+    expect(list.serialize()).toBe('46');
   });
 
   it('serialize should stringify a list with several nodes', () => {
@@ -109,6 +109,16 @@ describe('Singly Linked List', () => {
     list.append(6);
     list.append(8);
 
-    expect(list.serialize()).toBe('4 next is 6 next is 8 next is null');
+    expect(list.serialize()).toBe('468');
+  });
+
+  it('deserialize should return a new linked list if passed an empty string', () => {
+    let list = new LinkedList;
+    list.append(4);
+    list.append(6);
+    list.append(8);
+    list.serialize();
+    
+    expect(list.deserialize('456').toBe('something'));
   });
 });
