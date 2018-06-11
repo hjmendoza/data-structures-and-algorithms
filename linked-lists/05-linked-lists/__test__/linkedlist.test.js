@@ -90,5 +90,25 @@ describe('Singly Linked List', () => {
     expect(list.head.next.next.value).toBe(2);
   });
 
-  
+  it('serialize should return /"null/" for an empty list', () => {
+    let list = new LinkedList;
+    list.serialize();
+  });
+
+  it('seriazlie should stringify a list with 2 nodes', () => {
+    let list = new LinkedList;
+    list.append(4);
+    list.append(6);
+
+    expect(list.serialize()).toBe('4 next is 6 next is null');
+  });
+
+  it('serialize should stringify a list with several nodes', () => {
+    let list = new LinkedList;
+    list.append(4);
+    list.append(6);
+    list.append(8);
+
+    expect(list.serialize()).toBe('4 next is 6 next is 8 next is null');
+  });
 });
