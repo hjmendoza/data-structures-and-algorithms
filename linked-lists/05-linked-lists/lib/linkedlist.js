@@ -20,6 +20,33 @@ class LinkedList {
       current.next = new Node(value);
     }
   }
+
+  prepend(value){
+    // Big O: O(1)
+    if (!this.head) this.head = new Node(value);
+    else{
+      let current = this.head;
+      current.next = this.head;
+      this.head = new Node(value);
+    }
+  }
+
+  reverse(){
+    // Big O: O(n)
+    if (!this.head.next) return this.head;
+    else{
+      let current = this.head;
+      let previous = null;
+      while(current.next){
+        let save = current.next;
+        current.next = previous;
+        previous = current;
+        current = save;
+      }
+      this.head = current;
+      this.head.next = previous;
+    }
+  }
 }
 
 module.exports = LinkedList;
