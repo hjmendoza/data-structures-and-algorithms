@@ -48,17 +48,21 @@ class LinkedList {
     }
   }
 
-  remove(){
+  remove(offset){
     // Big O: O(n)
     if (!this.head) return 'null';
-    else{
+    else{ 
       let current = this.head;
       let save = null;
-      while(current.next !== null){
+      while(current.next){
+        if(current.value === offset){
+          save = current.next;
+          current.value = save;
+          break;
+        }
         save = current.next;
         current = current.next;
       }
-      save = null;
     }
   }
 

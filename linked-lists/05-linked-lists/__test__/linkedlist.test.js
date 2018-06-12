@@ -90,7 +90,8 @@ describe('Singly Linked List', () => {
     expect(list.head.next.next.value).toBe(2);
   });
 
-  it('remove should null if head does not exist', () => {
+  // REMOVE
+  it('remove should return null if head does not exist', () => {
     let list = new LinkedList;
     list.remove();
 
@@ -106,14 +107,14 @@ describe('Singly Linked List', () => {
     expect(list.head.value).toBe(2);
   });
 
-  it('remvoe should remove the last item in the list', () => {
+  it('remove should remove the offset in a list of nodes', () => {
     let list = new LinkedList;
     list.append(2);
     list.append(4);
     list.append(6);
-    list.reverse();
+    list.remove(4);
 
-    expect(list.head.next.value).toBe(4);
+    expect(list.head.next.value).toBeNull;
   });
 
   it('serialize should return /"null/" for an empty list', () => {
