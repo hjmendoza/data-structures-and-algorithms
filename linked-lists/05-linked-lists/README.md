@@ -1,45 +1,32 @@
-![cf](http://i.imgur.com/7v5ASc8.png) Linked List Data Structure
+![cf](http://i.imgur.com/7v5ASc8.png) Linked List Data Structure - Haley Mendoza
 ====
+[![Build Status](https://travis-ci.com/hjmendoza/data-structures-and-algorithms.svg?branch=master)](https://travis-ci.com/hjmendoza/data-structures-and-algorithms)
 
-## To Submit this Assignment
-  * Do all your work in a public repository called `data-structures-and-algorithms`
-  * write all of your code in a directory named `linked-lists`
-  * push to your repository
-  * submit a pull request to this repository
-  * submit a link to your PR in canvas
-  * write a question and observation on canvas
-
-## Requirements  
-#### Configuration  
+## Configuration  
   <!-- list of files, configurations, tools, etc that are required -->
-  Your lab directory must include  
-  * **index.js** -- The entry point to your module
-  * **README.md** -- with a documentation about your lab
-  * **.gitignore** -- with a robust .gitignore
-  * **.eslintrc** -- with the class .eslintrc file
-  * **.eslintignore** -- with the class .eslintignore
-  * **.travis.yml** -- travis-ci instructions
-  * **.package.json** -- with all dependencies and dev-dependencies
-  * **lib/** -- directory for holding your programs helper modules
-  * **__tests__/** -- directory for holding your programs unit and integration tests
+  * **index.js** -- The entry point to the module
+  * **lib/** -- directory holding program helper modules
+  * **__tests__/** -- directory holding program unit and integration tests
 
-#### Testing  
-  * write at least three test assertions for each method of the Singly Linked List Data Structure
-  * organize your tests into appropriate describe/it blocks for test output readability
+##  Installing
+  * After cloning repository, in main directory, run `npm i` to install dependencies 
+  * All methods are available in **lib/** directory
+  * In terminal, run `npm test` to run all unit test
 
-####  Documentation  
-  * in your README, write documentation for you data structures
-  * your documentation should includes code block useage examples
-  * provide instructions for:
-    * installing and using your data structure
-    * accessing each method
-    * running your tests
-
-#### Feature Tasks  
-* implement a Singly Linked List (SLL) data structure
-* implement `append(value)`, `prepend(value)`, `reverse()`, and `remove(offset)` methods to the SLL class
-* implement `serialize()` and `deserialize()` methods on the class
-	* To `serialize` means to convert an object to string form.
-	* To `deserialize` means to take the serialized string and convert to an object.
-	* Think JSON.stringify and JSON.parse but write your own instead! NOTE: JSON.parse wouldn't work as is anyway, why would that be?
-* in a comment within each function, note the it's Big-O runtime
+## Feature Methods 
+* Implemented a Singly Linked List (SLL) data structure
+* All methods contain comments indicating Big O
+* Implemented the following methods:
+  * Visual of SLL: `H > 2 > 4 > 6 > 8 > NULL`
+  * `append(value)` adds a value to the end of the list.
+    * Ex: `append(6)` will return `H > 2 > 4 > 6 > 8 > 6 > NULL`
+  * `prepend(value)` adds a value to the beginning of list, essentially creating a new head
+    * Ex: `prepend(1)` will return `H > 1> 2 > 4 > 6 > 8 > NULL`
+  * `reverse()` will reverse the order of list
+    * Ex: `list.reverse()` will return `H > 8 > 6 > 4 > 2 > NULL`
+  * `remove(offset)` will remove the value defined by the offset and set it to null.
+    * Ex: `remove(2)` will return `H > NULL > 4 > 6 > 8 > NULL`
+	* `serialize` converts an object to string form
+    * Ex: `list.serialize()` will return `2468`
+	* `deserialize` takes the serialized string and converts to an object
+    * Ex: `deserialize('2468')` will return a LL as `H > 2 > 4 > 6 > 8 > NULL`
