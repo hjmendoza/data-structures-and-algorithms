@@ -138,13 +138,27 @@ describe('Singly Linked List', () => {
     expect(list.serialize()).toBe('468');
   });
 
-  xit('deserialize should return a new linked list if passed an empty string', () => {
+  it('deserialize return null when passed an empty string', () => {
+    let list = new LinkedList;
+
+    expect(list.deserialize()).toBeNull;
+  });
+
+  it('deserialize should return a LL object when passed a serialized LL containing 2 nodes', () => {
+    let list = new LinkedList;
+    list.append(4);
+    list.append(6);
+
+    expect(list.deserialize(list.serialize())).toEqual({'head': {'next': {'next': null, 'value': '6'}, 'value': '4'}});
+  });
+
+  it('deserialize should return a LL object when passed a serialized LL containing many nodes', () => {
     let list = new LinkedList;
     list.append(4);
     list.append(6);
     list.append(8);
-    list.serialize();
-    
-    expect(list.deserialize('456').toBe('something'));
+    list.append(10);
+
+    expect(list.deserialize(list.serialize())).toEqual({'head': {'next': {'next': {'next': {'next': {'next': null, 'value': '0'}, 'value': '1'}, 'value': '8'}, 'value': '6'}, 'value': '4'}});
   });
 });

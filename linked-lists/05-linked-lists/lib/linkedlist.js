@@ -49,6 +49,7 @@ class LinkedList {
   }
 
   remove(){
+    // Big O: O(n)
     if (!this.head) return 'null';
     else{
       let current = this.head;
@@ -78,16 +79,18 @@ class LinkedList {
 
   deserialize(stringList){
     // Big O: O(n)
-    var i = 0;
-    let list = new LinkedList;
-    while (i < stringList.length){
-      var newNode = new Node(stringList[0]);
-      this.head = newNode;
+    if (!stringList) return null;
+    else {let list = new LinkedList;
+      let valuestoAdd = [];
+      let splitUp = stringList.split('');
+      for (let i=0; i < stringList.length; i++){
+        valuestoAdd.push(splitUp[i]);
+        list.append(valuestoAdd[i]);
+      }
+      return list;
     }
   }
 }
-
-
 
 module.exports = LinkedList;
 
