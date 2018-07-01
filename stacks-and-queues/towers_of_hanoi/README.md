@@ -12,4 +12,4 @@ The puzzle starts with the disks sorted (i.e. smaller disks sits on top of large
 * A disk can’t be placed on top of a smaller disk.
 
 ## Solution
-<!-- Embedded whiteboard image -->
+![Whiteboard Img](https://raw.githubusercontent.com/hjmendoza/data-structures-and-algorithms/towers_of_hanoi/assets/towers_of_hanoi.jpg)
