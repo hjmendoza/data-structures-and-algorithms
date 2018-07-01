@@ -2,6 +2,8 @@
 
 CF Whiteboard Challenge. Psuedocode, solution, and tests included.
 
+[![Build Status](https://travis-ci.com/hjmendoza/data-structures-and-algorithms.svg?branch=ll_insertions)](https://travis-ci.com/hjmendoza/data-structures-and-algorithms)
+
 ## Challenge
 Write the following methods for the Linked List class:
  * `.append(value)` which adds a new node with the given value to the end of the list
