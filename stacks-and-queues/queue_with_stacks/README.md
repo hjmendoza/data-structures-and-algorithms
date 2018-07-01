@@ -11,4 +11,6 @@ Implement the following methods for the Queue class:
 You have access to 2 Stack instances with push and pop methods.
 
 ## Solution
-[!whiteboard](https://raw.githubusercontent.com/hjmendoza/data-structures-and-algorithms/queue_with_stacks/assets/queue_with_stacks.jpg)
+![Whiteboard Img](https://raw.githubusercontent.com/hjmendoza/data-structures-and-algorithms/queue_with_stacks/assets/queue_with_stacks.jpg)
+
+
