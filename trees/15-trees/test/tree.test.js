@@ -33,4 +33,34 @@ describe('Tree module should', () => {
     tree.insert(25);
     expect(tree.root.right.right.value).toBe(25);
   });
+
+  it('remove the last node from on the left side', () => {
+
+    let tree = new Tree;
+    tree.insert(10);
+    tree.insert(5);
+    tree.insert(3);
+    tree.insert(15);
+    tree.remove(3);
+
+    expect(tree.root.left.value).toBe(5);
+    expect(tree.root.right.value).toBe(15);
+    expect(tree.root.left.left).toBeNull();
+  });
+
+
+  it('remove the last node from the right side', () => {
+    
+    let tree = new Tree;
+    tree.insert(10);
+    tree.insert(5);
+    tree.insert(15);
+    tree.insert(20);
+    tree.remove(20);
+
+    expect(tree.root.left.value).toBe(5);
+    expect(tree.root.right.value).toBe(15);
+    expect(tree.root.right.right).toBeNull();
+  });
+
 });
