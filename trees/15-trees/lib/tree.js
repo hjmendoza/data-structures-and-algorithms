@@ -47,16 +47,13 @@ class Tree {
   removeNode(node, key) {
     if (node === null) {
       return null;
-    }
-    else if (key < node.value) {
+    } else if (key < node.value) {
       node.left = this.removeNode(node.left, key);
       return node;
-    }
-    else if (key > node.value) {
+    } else if (key > node.value) {
       node.right = this.removeNode(node.right, key);
       return node;
-    }
-    else {
+    } else {
       if (node.left === null && node.right === null) {
         node = null;
         return node;
@@ -68,6 +65,21 @@ class Tree {
         node = node.left;
         return node;
       }
+    }
+  }
+
+  find(node, data) {
+    if (node === null) {
+      return null;
+    }
+    else if (data < node.data) {
+      return this.find(node.left, data);
+    }
+    else if (data > node.data) {
+      return this.find(node.right, data);
+    }
+    else {
+      return node;
     }
   }
 }

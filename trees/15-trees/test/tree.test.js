@@ -34,14 +34,22 @@ describe('Tree module should', () => {
     expect(tree.root.right.right.value).toBe(25);
   });
 
-  it('remove the last node from on the left side', () => {
+  it('remove(value) should return null root after removing one', () => {
+    let tree = new Tree;
+    tree.insert(5);
+    tree.remove(5);
+
+    expect(tree.root).toBe(null);
+  });
+
+  it('remove(value) should remove the last node from on the left', () => {
 
     let tree = new Tree;
     tree.insert(10);
     tree.insert(5);
-    tree.insert(3);
+    tree.insert(5);
     tree.insert(15);
-    tree.remove(3);
+    tree.remove(5);
 
     expect(tree.root.left.value).toBe(5);
     expect(tree.root.right.value).toBe(15);
@@ -49,7 +57,7 @@ describe('Tree module should', () => {
   });
 
 
-  it('remove the last node from the right side', () => {
+  it('remove(value) should remove the last node from the right', () => {
     
     let tree = new Tree;
     tree.insert(10);
@@ -62,5 +70,32 @@ describe('Tree module should', () => {
     expect(tree.root.right.value).toBe(15);
     expect(tree.root.right.right).toBeNull();
   });
+
+  it('find(node) should find one node', () => {
+    let tree = new Tree;
+    tree.insert(5);
+    expect(tree.find(5)).toBe(5);
+  });
+
+  it('find(node) should find a node to the right', () => {
+    let tree = new Tree;
+    tree.insert(10);
+    tree.insert(5);
+    tree.insert(20);
+    tree.insert(25);
+
+    expect(tree.find(25)).toBe(25);
+  });
+
+  it('find(node) should find a node to the left', () => {
+    let tree = new Tree;
+    tree.insert(4);
+    tree.insert(2);
+    tree.insert(6);
+    tree.insert(1);
+
+    expect(tree.find(1)).toBe(1);
+  });
+
 
 });
