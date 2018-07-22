@@ -68,19 +68,50 @@ class Tree {
     }
   }
 
-  find(node, data) {
+  find(node, value) {
     if (node === null) {
       return null;
-    }
-    else if (data < node.data) {
-      return this.find(node.left, data);
-    }
-    else if (data > node.data) {
-      return this.find(node.right, data);
-    }
-    else {
+    } else if (value < node.value) {
+      return this.find(node.left, value);
+    } else if (value > node.value) {
+      return this.find(node.right, value);
+    } else {
       return node;
     }
+  }
+
+  serialize() {
+    let results = [];
+    this.serializer(this.root, results);
+    return results.join(', ');
+  }
+
+  serializer(node, arr) {
+    if (!node) {
+      arr.push('null');
+      return;
+    }
+    arr.push(node.value);
+    this.serializer(node.left, arr);
+    this.serializer(node.right, arr);
+  }
+  
+  deserialize(value) {
+    value = value.split(',');
+    this.index = 0;
+    return this.deserializer(value);
+  }
+
+  deserializer(value) {
+    if (this.index > value.length || value[this.index] === 'null') {
+      return null;
+    }
+    let node = new Node(parseInt(value[this.index]));
+    this.index++;
+    node.left = this.deserializer(value, this.index);
+    this.index++;
+    node.right = this.deserializer(value, this.index);
+    return node;
   }
 }
 

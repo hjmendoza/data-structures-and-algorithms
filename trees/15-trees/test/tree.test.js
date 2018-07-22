@@ -97,5 +97,20 @@ describe('Tree module should', () => {
     expect(tree.find(1)).toBe(1);
   });
 
+  it('stringify() should return a string of data convert data', () => {
+    let tree = new Tree;
+    tree.insert(15);
+    tree.insert(5);
+    tree.insert(20);
+    let results = [];
+    let expected = '15, 5, null, null, 20, null, null';
+
+    expect(tree.serialize(tree.root, results)).toEqual(expected);
+  });
+
+
+  it('deserialize() should convert a string into a binary tree', () => {
+    
+  });
 
 });
