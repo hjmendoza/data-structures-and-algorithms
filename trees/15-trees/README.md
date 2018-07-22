@@ -1,5 +1,6 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) Tree Data Structure - Haley Mendoza
 ====
+[![Build Status](https://travis-ci.com/hjmendoza/data-structures-and-algorithms.svg?branch=master)](https://travis-ci.com/hjmendoza/data-structures-and-algorithms)
 
 #### Features 
   * implemented a Tree Constructor
