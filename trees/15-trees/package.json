@@ -1,0 +1,16 @@
+{
+  "name": "15-trees",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint **/*.js",
+    "test": "jest --verbose --coverage"  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^5.2.0",
+    "jest": "^23.4.1"
+  }
+}
